@@ -1,5 +1,11 @@
 # logiTalk
 
 👍👍👍
-пара слов
+крутий проект
+👍👍👍
+enter text
+👍👍👍
+enter text
+👍👍👍
+enter text
 👍👍👍
