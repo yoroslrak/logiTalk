@@ -11,7 +11,7 @@ class MainWindow(CTk):
 
 
        # ===== MENU =====
-       self.menu_frame = CTkFrame(self, width=40)
+       self.menu_frame = CTkFrame(self, width=40, fg_color='#446aa6')
        self.menu_frame.pack(side="left", fill="y")
 
 
@@ -23,17 +23,17 @@ class MainWindow(CTk):
 
 
        # ===== MAIN FRAME =====
-       self.main_frame = CTkFrame(self)
+       self.main_frame = CTkFrame(self, fg_color='#446aa6')
        self.main_frame.pack(side="left", fill="both", expand=True)
 
 
        # ===== CHAT =====
-       self.chat_field = CTkTextbox(self.main_frame, state="disabled")
+       self.chat_field = CTkTextbox(self.main_frame, state="disabled", fg_color='#669cf2')
        self.chat_field.pack(fill="both", expand=True, padx=5, pady=5)
 
 
        # ===== INPUT =====
-       self.bottom_frame = CTkFrame(self.main_frame, height=40)
+       self.bottom_frame = CTkFrame(self.main_frame, height=40, fg_color='#669cf2')
        self.bottom_frame.pack(fill="x")
 
 
@@ -63,7 +63,7 @@ class MainWindow(CTk):
 
 
        except Exception as e:
-           self.add_message(f"❌ Помилка підключення: {e}")
+           self.add_message(f"❌ Помилка підключення ❌: {e}")
 
 
    # ===== MENU =====
@@ -101,7 +101,7 @@ class MainWindow(CTk):
        new_name = self.name_entry.get()
        if new_name:
            self.username = new_name
-           self.add_message(f"[SYSTEM] Твоє ім'я змінено на {new_name}")
+           self.add_message(f"[SYSTEM] Зараз твоє ім'я {new_name}!")
 
 
    # ===== CHAT =====
@@ -120,7 +120,7 @@ class MainWindow(CTk):
                self.sock.sendall(data.encode())
                self.add_message(f"{self.username}: {message}")
            except:
-               self.add_message("❌ Помилка відправки")
+               self.add_message("❌Помилка відправки❌")
 
 
        self.message_entry.delete(0, "end")
@@ -168,6 +168,3 @@ class MainWindow(CTk):
 if __name__ == "__main__":
    app = MainWindow()
    app.mainloop()
-
-
-
